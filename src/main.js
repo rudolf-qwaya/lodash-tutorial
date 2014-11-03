@@ -37,10 +37,28 @@ function getElements(a) {
     return r;
 }
 
-function firstLongName(a) {
-    for (var key in a) {
-        var v = a[key];
-        if (v.name.length > 5) {
+function firstLongName(obj) {
+    for (var key in obj) {
+        var v = obj[key];
+        if (v.name && v.name.length > 5) {
+            return v;
+        }
+    }
+}
+
+function firstWithName(obj) {
+    for (var key in obj) {
+        var v = obj[key];
+        if (v.name) {
+            return v;
+        }
+    }
+}
+
+function firstEmperor(obj) {
+    for (var key in obj) {
+        var v = obj[key];
+        if (v.name === 'Caesar') {
             return v;
         }
     }

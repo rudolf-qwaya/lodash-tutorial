@@ -16,12 +16,14 @@ describe("Lo-Dash", function () {
 
     it("finds elements", function () {
         var database = {
+            alfa: {},
             a: {name: 'Adam'},
             b: {name: 'Bertil'},
             c: {name: 'Caesar'}
         };
 
-        var result = firstLongName(database);
-        expect(result).toEqual({name: 'Bertil'});
+        expect(firstLongName(database)).toEqual({name: 'Bertil'});
+        expect(firstWithName(database)).toEqual({name: 'Adam'});
+        expect(firstEmperor(database)).toEqual({name: 'Caesar'});
     });
 });
