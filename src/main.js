@@ -63,3 +63,22 @@ function firstEmperor(obj) {
         }
     }
 }
+
+function categorized(obj) {
+    return {
+        a: [{type: 'a', id: 1}, {type: 'a', id: 2}],
+        b: [{type: 'b', id: 1}, {type: 'b', id: 2}, {type: 'b', id: 3}],
+        c: [{type: 'c', id: 1}, {type: 'c', id: 3}]
+    };
+}
+
+function sumEvens(a) {
+    var r = 0;
+    for (var i = 0; i < a.length; i++) {
+        var obj = a[i];
+        if (obj % 2 === 0) {
+            r += obj;
+        }
+    }
+    return r;
+}

@@ -26,4 +26,27 @@ describe("Lo-Dash", function () {
         expect(firstWithName(database)).toEqual({name: 'Adam'});
         expect(firstEmperor(database)).toEqual({name: 'Caesar'});
     });
+
+    it("groups objects", function () {
+        var database = [
+            {type: 'a', id: 1},
+            {type: 'a', id: 2},
+            {type: 'b', id: 1},
+            {type: 'b', id: 2},
+            {type: 'b', id: 3},
+            {type: 'c', id: 1},
+            {type: 'c', id: 3}
+        ];
+
+        expect(categorized(database)).toEqual({
+            a: [{type: 'a', id: 1}, {type: 'a', id: 2}],
+            b: [{type: 'b', id: 1}, {type: 'b', id: 2}, {type: 'b', id: 3}],
+            c: [{type: 'c', id: 1}, {type: 'c', id: 3}]
+        });
+    });
+
+    it("sums evens", function () {
+        var result = sumEvens([1, 2, 4, 3, 2]);
+        expect(result).toEqual(8);
+    });
 });
