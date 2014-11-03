@@ -15,7 +15,13 @@ describe("Lo-Dash", function () {
     });
 
     it("finds elements", function () {
-        var result = firstTruthy({a: 0, b: 1, c: 2});
-        expect(result).toEqual(1);
+        var database = {
+            a: {name: 'Adam'},
+            b: {name: 'Bertil'},
+            c: {name: 'Caesar'}
+        };
+
+        var result = firstLongName(database);
+        expect(result).toEqual({name: 'Bertil'});
     });
 });

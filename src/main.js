@@ -37,6 +37,11 @@ function getElements(a) {
     return r;
 }
 
-function firstTruthy(a) {
-    return _.find(a);
+function firstLongName(a) {
+    for (var key in a) {
+        var v = a[key];
+        if (v.name.length > 5) {
+            return v;
+        }
+    }
 }
